@@ -1,19 +1,18 @@
 const axios = require("axios");
+const { BASE_URL_LOCATIONS, CLIENT_ID } = require("../../../core/config");
 const { getError } = require("../../../core/utils");
-
-const BASE_URL = "https://stage.abgapiservices.com/cars/locations/v1";
 
 const getAbgaAvailableLocations = async (keyWord, token) => {
   let brand = "Avis,Budget,Payless";
   let headers = {
     headers: {
-      client_id: "d59cf459",
+      client_id: CLIENT_ID,
       Authorization: "Bearer " + token,
     },
   };
   try {
     let res = await axios.get(
-      `${BASE_URL}?brand=${brand}&keyword=${keyWord}`,
+      `${BASE_URL_LOCATIONS}?brand=${brand}&keyword=${keyWord}`,
       headers
     );
     return res.data.locations;

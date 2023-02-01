@@ -1,23 +1,25 @@
 const axios = require("axios");
+const {
+  CLIENT_TOKEN_URL,
+  CLIENT_ID,
+  CLIENT_SECRET,
+} = require("../../../core/config");
 const { getError } = require("../../../core/utils");
 
 const getAbgaAccessToken = async () => {
   try {
-    let res = await axios.get(
-      "https://stage.abgapiservices.com/oauth/token/v1",
-      {
-        headers: {
-          client_id: "d59cf459",
-          client_secret: "2f2119fd5bd178b7e84ba89f6cf51116",
-        },
-      }
-    );
+    let res = await axios.get(CLIENT_TOKEN_URL, {
+      headers: {
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+      },
+    });
 
-    return res.data.access_token
+    return res.data.access_token;
   } catch (error) {
     let err = getError(error);
     return false;
   }
 };
 
-module.exports = getAbgaAccessToken
+module.exports = getAbgaAccessToken;
