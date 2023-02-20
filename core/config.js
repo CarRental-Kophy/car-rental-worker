@@ -14,7 +14,7 @@ const connectDB = async () => {
   }
 
   // const { MongoClient, ServerApiVersion } = require('mongodb');
-  // const uri = "mongodb+srv://bruiz:Horpeyhermi@bruizcluster.yqa1ibf.mongodb.net/?retryWrites=true&w=majority";
+  // const uri = "mongodb+srv://bruiz:<pwd>@bruizcluster.yqa1ibf.mongodb.net/?retryWrites=true&w=majority";
   // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
   // client.connect(err => {
   //   console.log("Conected connection")
