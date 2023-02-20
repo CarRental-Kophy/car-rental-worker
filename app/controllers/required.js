@@ -5,7 +5,7 @@ const isRequired = (req, res, next) => {
     pickupDate: req.body.pickupDate ?? "",
     pickupTime: req.body.pickupTime ?? "",
     dropOffDate: req.body.dropOffDate ?? "",
-    dropOffTime: req.body.dropOffTime ?? "",
+    dropOffTime: req.body.dropOffTime ?? "", 
     pickupLocation: req.body.pickupLocation ?? "",
   }; 
 
